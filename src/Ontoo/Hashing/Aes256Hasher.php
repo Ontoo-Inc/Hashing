@@ -27,7 +27,7 @@ class Aes256Hasher extends BaseHasher implements HasherInterface
     {
         $pad = $this->blocksize - (strlen($string) % $this->blocksize);
 
-        return trim(bin2hex(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key, $string . str_repeat(chr($pad), $pad), MCRYPT_MODE_CBC, $iv)));
+        return trim(bin2hex(openssl_encrypt($string . str_repeat(chr($pad), $pad), "AES-256-CBC", $key, OPENSSL_RAW_DATA|OPENSSL_ZERO_PADDING, $iv)));
     }
 
     /**
