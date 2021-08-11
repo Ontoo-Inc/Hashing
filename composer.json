@@ -1,5 +1,5 @@
 {
-    "name": "Ontoo/Hashing",
+    "name": "ontoo/hashing",
     "keywords": ["hashing", "hash"],
     "require": {
         "php": ">=5.4.0"
